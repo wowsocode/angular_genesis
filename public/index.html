@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>Angular Genesis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="fragment" content="!">
+  <link rel="stylesheet" href="/css/main.css"/>
+</head>
+<body id="app">
+  <a href="/">Home</a>
+  <ul class="menu">
+    <li><a href="/view1">view1</a></li>
+    <li><a href="/view2">view2</a></li>
+  </ul>
+  <div ng-view></div>
+
+  <div>Angular seed app: v<span app-version></span></div>
+  <script type="application/javascript" src="/js/lib.min.js"></script>
+  <script type="application/javascript" src="/js/app.min.js"></script>
+</body>
+</html>

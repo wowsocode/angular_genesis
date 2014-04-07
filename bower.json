@@ -1,0 +1,15 @@
+{
+  "name": "angular_genesis",
+  "description": "Angular bootstrap project with Hapi",
+  "version": "0.0.1",
+  "homepage": "https://github.com/wowsocode/angular_genesis.git",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.15",
+    "normalize-css": "~3.0.1"
+  }
+}
