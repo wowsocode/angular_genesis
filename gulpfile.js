@@ -46,7 +46,7 @@ gulp.task('watch', ['lib', 'css', 'app'], function(){
 })
 
 gulp.task('build', ['lib', 'css', 'app'], function(){
-  nodemon({ script: 'index.js', ext: 'html'})
+  nodemon({ script: 'index.js', ext: 'html js'})
     .on('restart', function () {
       console.log('restarted!')
     })
