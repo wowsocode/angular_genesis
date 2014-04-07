@@ -1,0 +1,12 @@
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+tmp
+angular-seed.sublime-project
+angular-seed.sublime-workspace
+.jshintrc
+public/css
+public/js
+.DS_Store
+.idea
