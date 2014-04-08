@@ -1,7 +1,7 @@
 angular_genesis
 ===============
 
-Bootstrap for an angular single page application, built on a Hapi framework with Gulp!
+Bootstrap for an Angularjs single page application, built on a Hapi framework with Gulp!
 
 ##Requires
 
