@@ -9,7 +9,6 @@
     "angular": "1.2.x",
     "angular-route": "1.2.x",
     "angular-loader": "1.2.x",
-    "angular-mocks": "~1.2.15",
-    "normalize-css": "~3.0.1"
+    "angular-mocks": "~1.2.15"
   }
 }
