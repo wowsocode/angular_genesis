@@ -6,8 +6,8 @@ var Hapi = require('hapi')
     , {
       cors: false
     })
-  , redirect = function(req, resp){
-    resp().redirect('/')
+  , redirect = function(request, reply){
+    reply().redirect('/')
   }
 
 server.route([
@@ -15,8 +15,8 @@ server.route([
   {
     method: 'GET'
     , path: '/'
-    , handler: function(req, resp){
-      resp.file('./public/index.html')
+    , handler: function(request, reply){
+      reply.file('./public/index.html')
     }
   }
 
@@ -76,8 +76,8 @@ server.route([
   , {
     method: 'GET'
     , path: '/view1'
-    , handler: function(req, resp){
-      resp.file('./public/index.html')
+    , handler: function(request, reply){
+      reply.file('./public/index.html')
     }
   }
 
@@ -85,8 +85,8 @@ server.route([
   , {
     method: 'GET'
     , path: '/view2'
-    , handler: function(req, resp){
-      resp.file('./public/index.html')
+    , handler: function(request, reply){
+      reply.file('./public/index.html')
     }
   }
 
