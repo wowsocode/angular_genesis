@@ -33,6 +33,9 @@
     "test-single-run": "karma start test/karma.conf.js  --single-run"
   },
   "dependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4",
+    "hapi": "^10.1.0",
+    "inert": "^3.0.1"
   }
 }
