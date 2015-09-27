@@ -1,22 +1,58 @@
 <!DOCTYPE HTML>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="lb">
+
 <head>
   <meta charset="utf-8">
-  <title>Angular Genesis</title>
+  <title>Lunchbullies Hapi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="fragment" content="!">
-  <link rel="stylesheet" href="/css/main.css"/>
+  <base href="/">
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
 </head>
+
 <body id="app">
+  <!-- Angular Material Javascript now available via Google CDN; version 0.10 used here -->
+  <div class="toolbardemoBasicUsage">
+    <md-content>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+          </md-button>
+          <h2>
+            <span>Toolbar with Icon Buttons</span>
+          </h2>
+          <span flex=""></span>
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="More">
+            <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+  </div>
   <a href="/">Home</a>
+  <div>
+  <input id="autocomplete" placeholder="Enter your address" type="text"></input>
+<h1>some text</h1>
+<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<div id="map"></div>
+</div>
   <ul class="menu">
     <li><a href="/view1">view1</a></li>
     <li><a href="/view2">view2</a></li>
   </ul>
   <div ng-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+  <div>Angular seed app: v
+    <span app-version></span>
+  </div>
   <script type="application/javascript" src="/js/lib.min.js"></script>
   <script type="application/javascript" src="/js/app.min.js"></script>
+  <script type="application/javascript" src="/js/indexscripts.js"></script>
+  <script data-ng-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoIhmdzSJQcKUBgmF5V2EUFD4Dgngptls&libraries=places&types=food&callback=initAutocomplete" async defer></script>
 </body>
+
 </html>
