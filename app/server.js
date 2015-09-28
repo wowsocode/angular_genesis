@@ -3,40 +3,13 @@
 var Hapi = require('hapi'),
   Inert = require('inert'),
   Path = require('path'),
-  dbOpts,
   server = new Hapi.Server(),
   redirect = function(request, reply) {
-    reply().redirect('/')
+    reply().redirect('/');
   };
 server.register(Inert, function() {});
-server.register({
-  register: require('hapi-mongodb'),
-  options: dbOpts
-}, function (err) {
-  if (err) {
-    console.log(err);
-    throw err;
-  }
-});
-
 server.connection({
   port: 1337
-});
-
-dbOpts = {
-  'url': 'mongodb://localhost:27017/test',
-  'settings': {
-    'db': {
-      'native_parse': false
-    }
-  }
-};
-
-server.pack.require('hapi-mongodb', dbOpts, function (err) {
-  if (err) {
-    console.log(err);
-    throw err;
-  }
 });
 
 server.route([
@@ -47,10 +20,6 @@ server.route([
     handler: function(request, reply) {
       reply.file('./public/index.html')
     }
-  }, {
-    method: 'GET',
-    path: '/users/{id}',
-    handler: usersHandler
   }
 
   //static js
@@ -60,6 +29,7 @@ server.route([
     handler: {
       directory: {
         path: Path.normalize('./public/js'),
+        listing: false,
         index: false
       }
     }
@@ -84,7 +54,7 @@ server.route([
     handler: {
       directory: {
         path: Path.normalize('./public/img'),
-
+        listing: false,
         index: false
       }
     }
@@ -97,6 +67,7 @@ server.route([
     handler: {
       directory: {
         path: Path.normalize('./public/css'),
+        listing: false,
         index: false
       }
     }
@@ -127,15 +98,5 @@ server.route([
     handler: redirect
   }
 ]);
-
-function usersHandler (request, reply) {
-  var db = request.server.plugins['hapi-mongodb'].db;
-    var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
- 
-    db.collection('users').findOne({  "_id" : new ObjectID(request.params.id) }, function(err, result) {
-        if (err) return reply(Boom.internal('Internal MongoDB error', err));
-        reply(result);
-    });
-}
 
 module.exports = server
