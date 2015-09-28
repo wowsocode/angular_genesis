@@ -29,6 +29,7 @@ server.route([
     handler: {
       directory: {
         path: Path.normalize('./public/js'),
+        listing: false,
         index: false
       }
     }
@@ -53,7 +54,7 @@ server.route([
     handler: {
       directory: {
         path: Path.normalize('./public/img'),
-
+        listing: false,
         index: false
       }
     }
@@ -66,6 +67,7 @@ server.route([
     handler: {
       directory: {
         path: Path.normalize('./public/css'),
+        listing: false,
         index: false
       }
     }
