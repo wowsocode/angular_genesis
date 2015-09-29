@@ -1,12 +1,13 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
+angular.module('lb', [
   'ngRoute',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
-  'myApp.controllers'
+  'lb.filters',
+  'globalNav',
+  'lb.services',
+  'lb.directives',
+  'lb.controllers'
 ]).config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/view1', {templateUrl: 'templates/partials/partial1.html', controller: 'MyCtrl1'})
