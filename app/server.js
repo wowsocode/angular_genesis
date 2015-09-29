@@ -3,6 +3,7 @@
 var Hapi = require('hapi'),
   Inert = require('inert'),
   Path = require('path'),
+  mysql = require('./sqlUtil'),
   server = new Hapi.Server(),
   redirect = function(request, reply) {
     reply().redirect('/');

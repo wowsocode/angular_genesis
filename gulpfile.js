@@ -5,13 +5,15 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     sass = require('gulp-sass'),
-    // livereload = require('gulp-livereload'),
+    livereload = require('gulp-livereload'),
     autoprefix = require('gulp-autoprefixer'),
     mincss = require('gulp-minify-css'),
     nodemon = require('gulp-nodemon'),
     config = require('./app/config.json');
 
-gulp.task('default', ['build']);
+gulp.task('default', ['build'], function () {
+  livereload.reload();
+});
 
 gulp.task('lib', function() {
     return bowerSrc()

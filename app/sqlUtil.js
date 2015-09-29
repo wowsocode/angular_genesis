@@ -1,15 +1,43 @@
 var mysql = require('mysql');
 var util = require('util');
 var async = require('async');
-// var slackUtil = require('./slackUtil');
 
-var default_config = {
+var connection = mysql.createConnection({
     database: "insainey_hapi",
     connectionLimit: 10,
     host: "70.39.234.39",
     user: "insainey_hapi",
-    password: ")apqGdxv9]Bk" /* dev test settings here */
-};
+    password: ")apqGdxv9]Bk"
+});
+connection.connect();
+connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
+  if (err) throw err;
+ 
+  console.log('The solution is: ', rows[0].solution);
+});
+ 
+connection.end();
+// var default_config = {
+//     database: "insainey_hapi",
+//     connectionLimit: 10,
+//     host: "70.39.234.39",
+//     user: "insainey_hapi",
+//     password: ")apqGdxv9]Bk" /* dev test settings here */
+// };
+
+// var connection = mysql.createConnection(default_config);
+
+// connection.connect();
+// .connect(function (err) {
+//     if (err) {
+//     console.error('error connecting: ' + err.stack);
+//     return;
+//   }
+ 
+//   console.log('connected as id ' + connection.threadId);
+// });
+
+
 var sqlConfig;
 
 var pool = null;
@@ -118,3 +146,5 @@ function SQLStatus() {
         console.log("SQL STATUS :: %j", connections);
     }
 }
+
+module.exports = exports;
